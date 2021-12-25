@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Quote Finder</h2><hr>
+            <p><b>Input Quote: </b> <i>{{quote}}</i></p>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Quotes</th>
+                    <th>Similarity_</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for key in result.keys() %}
+                  <tr>
+                    <td>{{key}}</td>
+                    <td>{{result[key]}} <span>%</span></td>
+                  </tr>
+                    {%endfor%}
+                </tbody>
+              </table>
+
+              <a href="{{ url_for('home') }}" class="link-danger"><h3>HOME</h3></a>
+        </div>  
+    </body>
+</html>
