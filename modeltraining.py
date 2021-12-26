@@ -18,7 +18,7 @@ model = Doc2Vec(vector_size=vec_size,
                 min_alpha=0.00025,
                 min_count=1,
                 workers = 16,
-                dm =1)
+                dm=1)
   
 model.build_vocab(tagged_data)
 
